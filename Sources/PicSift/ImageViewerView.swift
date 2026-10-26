@@ -77,7 +77,6 @@ struct ImageViewerView: View {
             .accessibilityHidden(true)
         }
         .environment(\.colorScheme, .dark)
-        .modifier(PicSiftAlerts(store: store, inViewer: true))
         .task(id: store.viewerItemID) {
             await loadCurrentImage()
         }

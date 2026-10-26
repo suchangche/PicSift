@@ -72,7 +72,7 @@ struct ContentView: View {
         .toolbarBackground(.visible, for: .windowToolbar)
         .toolbar(store.viewerItemID == nil ? .visible : .hidden, for: .windowToolbar)
         .navigationTitle(store.currentViewerItem?.url.lastPathComponent ?? store.folderURL?.lastPathComponent ?? "PicSift")
-        .modifier(PicSiftAlerts(store: store, inViewer: false))
+        .modifier(PicSiftAlerts(store: store, inViewer: store.currentViewerItem != nil))
     }
 }
 
